@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#3FD5A8"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/notice_back"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/btn_fanhui_88x88px" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:gravity="center"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:text="1"
+            android:background="@drawable/registerchecked_shape" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="填写基本信息" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/process_16x28px" />
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="2"
+            android:gravity="center"
+            android:background="@drawable/register_shape" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="父亲信息"
+            android:layout_marginLeft="5dp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/process2_16x28px" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="3"
+            android:background="@drawable/register_shape" />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="母亲信息" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/process2_16x28px" />
+    </LinearLayout>
+    <!--TODO-->
+</LinearLayout>

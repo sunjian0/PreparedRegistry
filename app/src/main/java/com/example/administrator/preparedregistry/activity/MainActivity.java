@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 ////设置状态栏颜色
 //        window.setStatusBarColor(R.color.head_color);
 
-        imageView= (ImageView) findViewById(R.id.main_image);
+        imageView= bindView(R.id.main_image);
 
         notice=bindView(R.id.main_notice);
         register=bindView(R.id.main_register);
@@ -63,9 +63,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.main_notice:
-                Intent intent=new Intent(MainActivity.this,NoticeActivity.class);
-                startActivity(intent);
+                Intent intentNotice=new Intent(MainActivity.this,NoticeActivity.class);
+                startActivity(intentNotice);
                 break;
+            case R.id.main_register:
+                Intent intentRegister=new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(intentRegister);
+                break;
+
 //            case    TODO 其余跳转
         }
     }
