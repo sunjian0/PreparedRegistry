@@ -3,100 +3,430 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <LinearLayout
+    <!--返回拦-->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="#3FD5A8"
-        android:orientation="horizontal">
+        android:background="#3FD5A8">
 
         <ImageView
             android:id="@+id/notice_back"
-            android:layout_width="0dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_width="20dp"
+            android:layout_height="335dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
             android:src="@mipmap/btn_fanhui_88x88px" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="9" />
-    </LinearLayout>
-
+            android:layout_centerInParent="true"
+            android:layout_weight="9"
+            android:gravity="center"
+            android:text="报名预登记"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+    </RelativeLayout>
+    <!--进度栏-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal">
 
         <TextView
-
-            android:gravity="center"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_gravity="center"
             android:layout_marginLeft="12dp"
-            android:text="1"
-            android:background="@drawable/registerchecked_shape" />
+            android:background="@drawable/registerchecked_shape"
+            android:gravity="center"
+            android:text="1" />
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="填写基本信息" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="填写基本信息"
+            android:textColor="#3FD5A8"
+            android:textSize="13sp" />
 
         <ImageView
-            android:layout_gravity="center"
             android:layout_width="20dp"
             android:layout_height="12dp"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
             android:src="@mipmap/process_16x28px" />
+
         <TextView
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:text="2"
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/register_shape"
             android:gravity="center"
-            android:background="@drawable/register_shape" />
+            android:text="2" />
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
             android:text="父亲信息"
-            android:layout_marginLeft="5dp"/>
+            android:textSize="13sp" />
 
         <ImageView
-            android:layout_gravity="center"
             android:layout_width="20dp"
             android:layout_height="12dp"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
             android:src="@mipmap/process2_16x28px" />
 
         <TextView
-            android:gravity="center"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:text="3"
-            android:background="@drawable/register_shape" />
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/register_shape"
+            android:gravity="center"
+            android:text="3" />
 
         <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="母亲信息" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="母亲信息"
+            android:textSize="13sp" />
 
         <ImageView
-            android:layout_gravity="center"
             android:layout_width="20dp"
             android:layout_height="12dp"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
             android:src="@mipmap/process2_16x28px" />
     </LinearLayout>
-    <!--TODO-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#F0F0F0"></LinearLayout>
+    <!--具体信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="基本信息"
+            android:textColor="#2b2b2b"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#b2b2b2" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="子女姓名"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="填写姓名"
+                android:textSize="12sp"
+                android:textColor="#b2b2b2"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="子女身份证号"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="填写身份证号"
+                android:textSize="12sp"
+                android:layout_marginRight="12dp"
+                android:textColor="#b2b2b2"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="子女户籍省县"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="12sp"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="省 市 区"/>
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/process2_16x28px"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="户籍地派出所"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="填写户籍地派出所"
+                android:textSize="12sp"
+                android:textColor="#b2b2b2"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="民族"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="12sp"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="填写民族"/>
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/process2_16x28px"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="监护人移动电话"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="填写手机号码"
+                android:textSize="12sp"
+                android:textColor="#b2b2b2"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="在杭家庭地址"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="填写家庭地址"
+                android:textSize="12sp"
+                android:textColor="#b2b2b2"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="父母在杭是否有房产（非必填）"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="12sp"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="无"/>
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/process2_16x28px"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="在杭房产证号"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="请填写完整的房产证号"
+                android:textSize="12sp"
+                android:textColor="#b2b2b2"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:text="在杭房屋坐落"
+                android:textSize="13sp"
+                android:textColor="#2b2b2b"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <EditText
+                android:hint="请按房产证上地址填写"
+                android:textSize="12sp"
+                android:textColor="#b2b2b2"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1"/>
+                <!--TODO-->
+
+                <Button
+                    android:layout_marginTop="25dp"
+                    android:text="下一步"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:background="@drawable/btn_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
 </LinearLayout>
