@@ -20,7 +20,7 @@ public class MyDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.register_dialog);
+        setContentView(R.layout.dialog_register);
         // 实例化新的窗口
         Window w = getWindow();
         // 获取默认显示数据

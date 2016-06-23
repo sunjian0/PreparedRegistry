@@ -294,6 +294,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true">
                                 <!--TODO 保险信息没给-->
+                                <!--TODO 选择后 下方出现隐藏的属性 -->
                                 <Spinner
                                     android:id="@+id/registerfather_spinner_insurance"
                                     android:layout_width="wrap_content"
@@ -665,7 +666,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:layout_marginTop="25dp"
-                        android:layout_marginBottom="15dp"
+                        android:layout_marginBottom="25dp"
                         android:background="@drawable/btn_shape"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
