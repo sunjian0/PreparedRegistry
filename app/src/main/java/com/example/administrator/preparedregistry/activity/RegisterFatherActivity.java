@@ -1,10 +1,12 @@
 package com.example.administrator.preparedregistry.activity;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -20,6 +22,8 @@ public class RegisterFatherActivity extends BaseActivity implements View.OnClick
     private ToggleButton toggleButton;
     private LinearLayout layoutNotDie,layoutDie;
 
+    private TextView tvLabelOne,tvLabelTwo,tvLabelThree;
+
     @Override
     protected int initLayout() {
         return R.layout.activity_register_father;
@@ -31,6 +35,9 @@ public class RegisterFatherActivity extends BaseActivity implements View.OnClick
         toggleButton = bindView(R.id.registerfather_togglebutton);
         layoutNotDie = bindView(R.id.registerfather_layout_notdie);
         layoutDie=bindView(R.id.registerfather_layout_die);
+        tvLabelOne=bindView(R.id.registerfather_text_labelOne);
+        tvLabelTwo=bindView(R.id.registerfather_text_labelTwo);
+        tvLabelThree=bindView(R.id.registerfather_text_labelThree);
     }
 
     @Override
@@ -42,9 +49,15 @@ public class RegisterFatherActivity extends BaseActivity implements View.OnClick
                 if (isChecked) {
                     layoutNotDie.setVisibility(View.GONE);
                     layoutDie.setVisibility(View.VISIBLE);
+                    tvLabelOne.setTextColor(Color.parseColor("#b2b2b2"));
+                    tvLabelTwo.setTextColor(Color.parseColor("#b2b2b2"));
+                    tvLabelThree.setTextColor(Color.parseColor("#b2b2b2"));
                 } else {
                     layoutNotDie.setVisibility(View.VISIBLE);
                     layoutDie.setVisibility(View.GONE);
+                    tvLabelOne.setTextColor(Color.parseColor("#d10000"));
+                    tvLabelTwo.setTextColor(Color.parseColor("#d10000"));
+                    tvLabelThree.setTextColor(Color.parseColor("#d10000"));
                 }
             }
         });

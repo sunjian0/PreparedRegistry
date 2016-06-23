@@ -634,6 +634,7 @@
                     android:orientation="vertical">
                     <!--TODO 字颜色改变-->
                     <TextView
+                        android:id="@+id/registerfather_text_labelOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -644,6 +645,7 @@
                         android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/registerfather_text_labelTwo"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:layout_width="wrap_content"
@@ -652,6 +654,7 @@
                     android:textColor="#d10000"
                     android:textSize="12sp" />
                     <TextView
+                        android:id="@+id/registerfather_text_labelThree"
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:layout_width="wrap_content"
