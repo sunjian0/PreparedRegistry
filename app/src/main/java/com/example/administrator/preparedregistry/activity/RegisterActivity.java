@@ -2,6 +2,7 @@ package com.example.administrator.preparedregistry.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
@@ -33,11 +34,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initView() {
-        spiIfHaveHome = bindView(R.id.register_spinnerIfhavehome);
+        spiIfHaveHome = bindView(R.id.register_spinner_ifhavehome);
         layoutHomeCard = bindView(R.id.register_layoutHomeCardNumber);
         layoutHomePlace = bindView(R.id.register_layoutHomePlace);
         button=bindView(R.id.register_btn);
-        ivBack=bindView(R.id.notice_back);
+        ivBack=bindView(R.id.register_back);
     }
 
     @Override
@@ -100,9 +101,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.register_btn:
-                // TODO
+
+                // TODO  一系列发送数据到服务器的操作
+                Intent intent=new Intent(RegisterActivity.this,RegisterFatherActivity.class);
+                startActivity(intent);
+
                 break;
-            case R.id.notice_back:
+            case R.id.register_back:
                 finish();
                 break;
         }

@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".activity.NoticeActivity"></activity>
         <activity android:name=".activity.RegisterActivity"></activity>
+        <activity android:name=".activity.RegisterFatherActivity"></activity>
+        <activity android:name=".activity.RegisterMotherActivity"></activity>
     </application>
 
 </manifest>

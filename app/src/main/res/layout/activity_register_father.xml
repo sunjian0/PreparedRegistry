@@ -4,5 +4,674 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    
+    <!--返回拦-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#3FD5A8">
+
+        <ImageView
+            android:id="@+id/registerfather_back"
+            android:layout_width="20dp"
+            android:layout_height="335dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/btn_fanhui_88x88px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="9"
+            android:gravity="center"
+            android:text="报名预登记"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+    </RelativeLayout>
+    <!--进度栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/registerchecked_shape"
+            android:gravity="center"
+            android:text="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="填写基本信息"
+            android:textColor="#3FD5A8"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/process_16x28px" />
+
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/registerchecked_shape"
+            android:gravity="center"
+            android:text="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="父亲信息"
+            android:textColor="#3FD5A8"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/process2_16x28px" />
+
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/register_shape"
+            android:gravity="center"
+            android:text="3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="母亲信息"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/process2_16x28px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#F0F0F0" />
+    <!--具体信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="12dp"
+            android:gravity="center_vertical"
+            android:text="父亲信息"
+            android:textColor="#2b2b2b"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#b2b2b2" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="center_vertical"
+                            android:text="是否已故"
+                            android:textColor="#2b2b2b"
+                            android:textSize="13sp" />
+
+                        <ToggleButton
+                            android:id="@+id/registerfather_togglebutton"
+                            style="@style/MyToggleButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="12dp"
+                            android:background="#00000000"
+                            android:textOff=""
+                            android:textOn="" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e1e1e1" />
+
+                    <!--未故 内容-->
+                    <LinearLayout
+                        android:id="@+id/registerfather_layout_notdie"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="父亲姓名"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="12dp"
+                                android:background="@null"
+                                android:hint="填写姓名"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="父亲身份证号"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="12dp"
+                                android:background="@null"
+                                android:hint="填写身份证号"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="联系电话"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="12dp"
+                                android:background="@null"
+                                android:hint="填写手机号码"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="在杭已缴保险信息"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true">
+                                <!--TODO 保险信息没给-->
+                                <Spinner
+                                    android:id="@+id/registerfather_spinner_insurance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:entries="@array/national"
+                                    android:gravity="right"
+                                    android:textColor="#b2b2b2"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:layout_width="7dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="4dp"
+                                    android:src="@mipmap/process2_16x28px" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="工作单位（非必填）"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="12dp"
+                                android:background="@null"
+                                android:hint="填写工作单位"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="在杭（临时）居住证号码"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="12dp"
+                                android:background="@null"
+                                android:hint="填写居住证号码"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="发证派出所"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true">
+                                <!--TODO 派出所没给-->
+                                <Spinner
+                                    android:id="@+id/registerfather_spinner_policeStation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:entries="@array/national"
+                                    android:gravity="right"
+                                    android:textColor="#b2b2b2"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:layout_width="7dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="4dp"
+                                    android:src="@mipmap/process2_16x28px" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="在杭（临时）居住起止时间"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp">
+                            <!--TODO 三级联动？待定-->
+                            <EditText
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:background="@mipmap/edittextbackground" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:text="至" />
+
+                            <EditText
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:background="@mipmap/edittextbackground" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="left"
+                            android:text="在杭（临时）居住证地址"
+                            android:textColor="#2b2b2b"
+                            android:textSize="13sp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@null"
+                            android:hint="填写地址"
+                            android:textColor="#323232"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="left"
+                            android:text="在杭劳动合同或工商营业执照（非必填）"
+                            android:textColor="#2b2b2b"
+                            android:textSize="13sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_alignParentLeft="true"
+                                android:background="@null"
+                                android:hint="有工商营业执照"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="15dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@mipmap/process2_16x28px" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#e1e1e1" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="营业起止时间"
+                                android:textColor="#2b2b2b"
+                                android:textSize="13sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp">
+
+                            <EditText
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:background="@mipmap/edittextbackground" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:text="至" />
+
+                            <EditText
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:background="@mipmap/edittextbackground" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="left"
+                            android:text="备注（非必填）"
+                            android:textColor="#2b2b2b"
+                            android:textSize="13sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_alignParentLeft="true"
+                                android:background="@null"
+                                android:hint="请选择"
+                                android:textColor="#323232"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="15dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@mipmap/process2_16x28px" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!--已故 内容-->
+                    <LinearLayout
+                        android:id="@+id/registerfather_layout_die"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:gravity="center_horizontal"
+                            android:text="若已故，到学校时需提供死亡证明和户口"
+                            android:textColor="#d10000"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="50dp"
+                            android:gravity="center_horizontal"
+                            android:text="注销证明"
+                            android:textColor="#d10000"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="#F0F0F0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--TODO 字颜色改变-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="注："
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:textColor="#d10000"
+                        android:textSize="12sp" />
+
+                    <TextView
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.父母至少有一方在杭州已缴纳保险，2014年8月31日后在杭州缴纳保险的，不符合在杭入学条件；"
+                    android:textColor="#d10000"
+                    android:textSize="12sp" />
+                    <TextView
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2.请完整填写父母双方的2014年8月31日前办理的在杭（临时）居住证信息。"
+                        android:textColor="#d10000"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:text="下一步"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/btn_shape"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
 </LinearLayout>

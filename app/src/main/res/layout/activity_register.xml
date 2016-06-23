@@ -10,7 +10,7 @@
         android:background="#3FD5A8">
 
         <ImageView
-            android:id="@+id/notice_back"
+            android:id="@+id/register_back"
             android:layout_width="20dp"
             android:layout_height="335dp"
             android:layout_alignParentLeft="true"
@@ -116,8 +116,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
         android:orientation="vertical">
 
         <TextView
@@ -125,6 +123,7 @@
             android:layout_height="30dp"
             android:gravity="center_vertical"
             android:text="基本信息"
+            android:layout_marginLeft="12dp"
             android:textColor="#2b2b2b"
             android:textSize="12sp"
             android:textStyle="bold" />
@@ -139,6 +138,8 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -163,7 +164,7 @@
                         android:layout_marginRight="12dp"
                         android:background="@null"
                         android:hint="填写姓名"
-                        android:textColor="#b2b2b2"
+                        android:textColor="#323232"
                         android:textSize="12sp" />
                 </RelativeLayout>
 
@@ -192,7 +193,7 @@
                         android:layout_marginRight="12dp"
                         android:background="@null"
                         android:hint="填写身份证号"
-                        android:textColor="#b2b2b2"
+                        android:textColor="#323232"
                         android:textSize="12sp" />
                 </RelativeLayout>
 
@@ -219,6 +220,7 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true">
 
+                        <!--TODO 改变后 代码手动设置颜色 #323232-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -260,7 +262,7 @@
                         android:layout_marginRight="12dp"
                         android:background="@null"
                         android:hint="填写户籍地派出所"
-                        android:textColor="#b2b2b2"
+                        android:textColor="#323232"
                         android:textSize="12sp" />
                 </RelativeLayout>
 
@@ -288,7 +290,7 @@
                         android:layout_alignParentRight="true">
 
                         <Spinner
-                            android:id="@+id/register_spinnerNational"
+                            android:id="@+id/register_spinner_national"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@null"
@@ -331,7 +333,7 @@
                         android:layout_marginRight="12dp"
                         android:background="@null"
                         android:hint="填写手机号码"
-                        android:textColor="#b2b2b2"
+                        android:textColor="#323232"
                         android:textSize="12sp" />
                 </RelativeLayout>
 
@@ -360,7 +362,7 @@
                         android:layout_marginRight="12dp"
                         android:background="@null"
                         android:hint="填写家庭地址"
-                        android:textColor="#b2b2b2"
+                        android:textColor="#323232"
                         android:textSize="12sp" />
                 </RelativeLayout>
 
@@ -388,7 +390,7 @@
                         android:layout_alignParentRight="true">
 
                         <Spinner
-                            android:id="@+id/register_spinnerIfhavehome"
+                            android:id="@+id/register_spinner_ifhavehome"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@null"

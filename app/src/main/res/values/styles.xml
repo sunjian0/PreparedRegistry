@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="MyToggleButton" parent="@android:style/Widget.CompoundButton">
+        <item name="android:button">@drawable/ifdie_selector</item>
+    </style>
 </resources>
