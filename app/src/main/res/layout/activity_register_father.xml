@@ -319,6 +319,64 @@
                             android:layout_height="1dp"
                             android:background="#e1e1e1" />
 
+
+                        <LinearLayout
+                            android:id="@+id/registerfather_layout_insuranceTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"
+                                    android:gravity="center_vertical"
+                                    android:text="起止时间"
+                                    android:textColor="#2b2b2b"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="10dp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp">
+                                <!--TODO 三级联动？待定-->
+                                <EditText
+                                    android:id="@+id/registerfather_et_insuranceTimeStart"
+                                    android:layout_width="150dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"
+                                    android:background="@mipmap/edittextbackground" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerHorizontal="true"
+                                    android:gravity="center"
+                                    android:text="至" />
+
+                                <EditText
+                                    android:id="@+id/registerfather_et_insuranceTimeEnd"
+                                    android:layout_width="150dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentRight="true"
+                                    android:background="@mipmap/edittextbackground" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp" />
+                        </LinearLayout>
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="40dp">
@@ -442,6 +500,7 @@
                             android:layout_height="20dp">
                             <!--TODO 三级联动？待定-->
                             <EditText
+                                android:id="@+id/registerfather_et_liveStart"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -455,6 +514,7 @@
                                 android:text="至" />
 
                             <EditText
+                                android:id="@+id/registerfather_et_liveEnd"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -546,6 +606,7 @@
                             android:layout_height="20dp">
 
                             <EditText
+                                android:id="@+id/registerfather_et_businessStart"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -559,6 +620,7 @@
                                 android:text="至" />
 
                             <EditText
+                                android:id="@+id/registerfather_et_businessEnd"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -628,50 +690,51 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:background="#F0F0F0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#F0F0F0"
                     android:orientation="vertical">
-                    <!--TODO 字颜色改变-->
+
                     <TextView
                         android:id="@+id/registerfather_text_labelOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="注："
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
+                        android:layout_marginTop="15dp"
+                        android:text="注："
                         android:textColor="#d10000"
                         android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/registerfather_text_labelTwo"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.父母至少有一方在杭州已缴纳保险，2014年8月31日后在杭州缴纳保险的，不符合在杭入学条件；"
-                    android:textColor="#d10000"
-                    android:textSize="12sp" />
-                    <TextView
-                        android:id="@+id/registerfather_text_labelThree"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="1.父母至少有一方在杭州已缴纳保险，2014年8月31日后在杭州缴纳保险的，不符合在杭入学条件；"
+                        android:textColor="#d10000"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/registerfather_text_labelThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
                         android:text="2.请完整填写父母双方的2014年8月31日前办理的在杭（临时）居住证信息。"
                         android:textColor="#d10000"
                         android:textSize="12sp" />
 
                     <Button
-                        android:text="下一步"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="25dp"
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:layout_marginTop="25dp"
-                        android:layout_marginBottom="25dp"
                         android:background="@drawable/btn_shape"
-                        android:layout_height="wrap_content" />
+                        android:text="下一步" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
