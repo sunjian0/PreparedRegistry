@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:su="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+    <com.example.administrator.preparedregistry.city.ScrollerNumberPicker
+        android:id="@+id/province"
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        su:itemNumber="3"
+        su:lineColor="#007bd1"
+        su:maskHight="32dp"
+        su:noEmpty="true"
+        su:normalTextColor="#777"
+        su:normalTextSize="11sp"
+        su:selecredTextSize="13sp"
+        su:selecredTextColor="#ff000000"
+        su:unitHight="50dp" />
+
+    <LinearLayout
+        android:layout_width="20dp"
+        android:layout_height="match_parent" />
+
+    <com.example.administrator.preparedregistry.city.ScrollerNumberPicker
+        android:id="@+id/city"
+        android:layout_weight="7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        su:itemNumber="3"
+        su:lineColor="#007bd1"
+        su:maskHight="32dp"
+        su:noEmpty="true"
+        su:normalTextColor="#777"
+        su:normalTextSize="11sp"
+        su:selecredTextColor="#ff000000"
+        su:selecredTextSize="13sp"
+        su:unitHight="50dp" />
+
+
+    <LinearLayout
+        android:layout_width="20dp"
+        android:layout_height="match_parent" />
+
+    <com.example.administrator.preparedregistry.city.ScrollerNumberPicker
+        android:id="@+id/couny"
+        android:layout_weight="6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        su:itemNumber="3"
+        su:lineColor="#007bd1"
+        su:maskHight="32dp"
+        su:noEmpty="true"
+        su:normalTextColor="#777"
+        su:normalTextSize="11sp"
+        su:selecredTextColor="#ff000000"
+        su:selecredTextSize="13sp"
+        su:unitHight="50dp" />
+
+
+</LinearLayout>
