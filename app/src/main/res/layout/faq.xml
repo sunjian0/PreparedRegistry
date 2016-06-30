@@ -10,6 +10,7 @@
         android:background="#3FD5A8">
 
         <ImageView
+            android:id="@+id/faq_back"
             android:layout_width="20dp"
             android:layout_height="335dp"
             android:layout_alignParentLeft="true"

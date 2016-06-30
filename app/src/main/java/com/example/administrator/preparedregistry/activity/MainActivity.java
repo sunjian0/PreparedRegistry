@@ -3,10 +3,7 @@ package com.example.administrator.preparedregistry.activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -70,8 +67,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent intentRegister=new Intent(MainActivity.this,RegisterActivity.class);
                 startActivity(intentRegister);
                 break;
+            //结果核查
+            case R.id.main_checkResult:
+                ResultCheckActivity.startAction(MainActivity.this);
+                break;
+            //复核申请
+            case R.id.main_applyForCheck:
+                RecheckRequest.startAction(MainActivity.this);
+                break;
+            //学院信息
+            case R.id.main_school:
+                SchoolInfor.startAction(MainActivity.this);
+                break;
+            //faq
+            /*
+             case R.id.action_settings:
+                Faq.startAction(MainActivity.this);
+                break;
+            * */
 
-//            case    TODO 其余跳转
         }
     }
 }
