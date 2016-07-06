@@ -11,7 +11,7 @@
         android:background="#3FD5A8">
 
         <ImageView
-            android:id="@+id/registerfather_back"
+            android:id="@+id/registerparents_back"
             android:layout_width="20dp"
             android:layout_height="335dp"
             android:layout_alignParentLeft="true"
@@ -29,85 +29,108 @@
             android:textColor="#ffffff"
             android:textSize="17sp" />
     </RelativeLayout>
-    <!--进度栏-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal">
-
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
         <TextView
-            android:layout_width="18dp"
+            android:id="@+id/registerparents_tv_taskbarOne"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="18dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="12dp"
             android:background="@drawable/registerchecked_shape"
             android:gravity="center"
             android:text="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/registerparents_tv_taskbarStudent"
+            android:layout_width="0dp"
+            android:layout_weight="6"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
             android:text="填写基本信息"
+            android:layout_marginLeft="3dp"
             android:textColor="#3FD5A8"
             android:textSize="13sp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="12dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="19dp"
-            android:src="@mipmap/process_16x28px" />
 
+        <ImageView
+             android:layout_width="0dp"
+            android:layout_height="12dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/process_16x28px" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
         <TextView
-            android:layout_width="18dp"
+            android:id="@+id/registerparents_tv_taskbarTwo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="18dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="19dp"
             android:background="@drawable/registerchecked_shape"
             android:gravity="center"
             android:text="2" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/registerparents_tv_taskbarFather"
+            android:layout_width="0dp"
+            android:layout_weight="4"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
             android:text="父亲信息"
+            android:layout_marginLeft="3dp"
             android:textColor="#3FD5A8"
             android:textSize="13sp" />
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="19dp"
             android:src="@mipmap/process2_16x28px" />
-
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
         <TextView
-            android:layout_width="18dp"
+            android:id="@+id/registerparents_tv_taskbarThree"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="18dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="19dp"
             android:background="@drawable/register_shape"
             android:gravity="center"
             android:text="3" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/registerparents_tv_taskbarMother"
+            android:layout_width="0dp"
+            android:layout_weight="4"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
             android:text="母亲信息"
+            android:layout_marginLeft="3dp"
             android:textSize="13sp" />
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="19dp"
-            android:src="@mipmap/process2_16x28px" />
+            android:src="@mipmap/process2_16x28px"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
     <LinearLayout
@@ -121,6 +144,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/registerparents_test_pageHead"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="12dp"
@@ -165,10 +189,11 @@
                             android:textSize="13sp" />
 
                         <ToggleButton
-                            android:id="@+id/registerfather_togglebutton"
+
+                            android:id="@+id/registerparents_togglebutton"
                             style="@style/MyToggleButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="12dp"
                             android:background="#00000000"
@@ -184,7 +209,7 @@
 
                     <!--未故 内容-->
                     <LinearLayout
-                        android:id="@+id/registerfather_layout_notdie"
+                        android:id="@+id/registerparents_layout_notdie"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -194,6 +219,7 @@
                             android:layout_height="40dp">
 
                             <TextView
+                                android:id="@+id/registerparents_tv_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -223,6 +249,7 @@
                             android:layout_height="40dp">
 
                             <TextView
+                                android:id="@+id/registerparents_tv_idCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -294,13 +321,13 @@
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true">
                                 <!--TODO 保险信息没给-->
-                                <!--TODO 选择后 下方出现隐藏的属性 -->
+
                                 <Spinner
-                                    android:id="@+id/registerfather_spinner_insurance"
+                                    android:id="@+id/registerparents_spinner_insurance"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:background="@null"
-                                    android:entries="@array/national"
+                                    android:entries="@array/ifPayInsurance"
                                     android:gravity="right"
                                     android:textColor="#b2b2b2"
                                     android:textSize="12sp" />
@@ -321,7 +348,7 @@
 
 
                         <LinearLayout
-                            android:id="@+id/registerfather_layout_insuranceTime"
+                            android:id="@+id/registerparents_layout_insuranceTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -348,9 +375,9 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp">
-                                <!--TODO 三级联动？待定-->
+
                                 <EditText
-                                    android:id="@+id/registerfather_et_insuranceTimeStart"
+                                    android:id="@+id/registerparents_et_insuranceTimeStart"
                                     android:layout_width="150dp"
                                     android:layout_height="match_parent"
                                     android:layout_alignParentLeft="true"
@@ -364,7 +391,7 @@
                                     android:text="至" />
 
                                 <EditText
-                                    android:id="@+id/registerfather_et_insuranceTimeEnd"
+                                    android:id="@+id/registerparents_et_insuranceTimeEnd"
                                     android:layout_width="150dp"
                                     android:layout_height="match_parent"
                                     android:layout_alignParentRight="true"
@@ -452,13 +479,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true">
-                                <!--TODO 派出所没给-->
+
                                 <Spinner
-                                    android:id="@+id/registerfather_spinner_policeStation"
+                                    android:id="@+id/registerparents_spinner_policeStation"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:background="@null"
-                                    android:entries="@array/national"
+                                    android:entries="@array/policeStation"
                                     android:gravity="right"
                                     android:textColor="#b2b2b2"
                                     android:textSize="12sp" />
@@ -498,9 +525,9 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="20dp">
-                            <!--TODO 三级联动？待定-->
+
                             <EditText
-                                android:id="@+id/registerfather_et_liveStart"
+                                android:id="@+id/registerparents_et_liveStart"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -514,7 +541,7 @@
                                 android:text="至" />
 
                             <EditText
-                                android:id="@+id/registerfather_et_liveEnd"
+                                android:id="@+id/registerparents_et_liveEnd"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -606,7 +633,7 @@
                             android:layout_height="20dp">
 
                             <EditText
-                                android:id="@+id/registerfather_et_businessStart"
+                                android:id="@+id/registerparents_et_businessStart"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -620,7 +647,7 @@
                                 android:text="至" />
 
                             <EditText
-                                android:id="@+id/registerfather_et_businessEnd"
+                                android:id="@+id/registerparents_et_businessEnd"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -661,7 +688,7 @@
 
                     <!--已故 内容-->
                     <LinearLayout
-                        android:id="@+id/registerfather_layout_die"
+                        android:id="@+id/registerparents_layout_die"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -696,7 +723,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/registerfather_text_labelOne"
+                        android:id="@+id/registerparents_text_labelOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -707,7 +734,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/registerfather_text_labelTwo"
+                        android:id="@+id/registerparents_text_labelTwo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -717,7 +744,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/registerfather_text_labelThree"
+                        android:id="@+id/registerparents_text_labelThree"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -727,6 +754,7 @@
                         android:textSize="12sp" />
 
                     <Button
+                        android:id="@+id/registerparents_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="25dp"
