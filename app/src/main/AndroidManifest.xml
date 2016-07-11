@@ -31,7 +31,8 @@
         <activity android:name=".activity.ResultCheckActivity" />
         <activity android:name=".activity.RecheckRequest" />
         <activity android:name=".activity.SchoolInfor" />
-        <activity android:name=".activity.Faq"></activity>
+        <activity android:name=".activity.Faq" />
+        <activity android:name=".activity.ResultCheckInfor"></activity>
     </application>
 
 </manifest>

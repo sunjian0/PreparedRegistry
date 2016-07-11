@@ -10,6 +10,7 @@
         android:background="#3FD5A8">
 
         <ImageView
+            android:id="@+id/check_infor_back"
             android:layout_width="20dp"
             android:layout_height="335dp"
             android:layout_alignParentLeft="true"
@@ -938,14 +939,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
                     android:gravity="center_vertical"
-                    android:text="*对以上信息存在异议，请提"
+                    android:text="*对以上信息存在异议，请提交"
                     android:textColor="@color/colorRed" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="交复核申请"
+                    android:text="复核申请"
                     android:textColor="@color/colorBlue" />
 
             </LinearLayout>
@@ -953,6 +954,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginBottom="100dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="25dp"

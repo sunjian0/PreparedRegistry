@@ -10,6 +10,7 @@ import com.example.administrator.preparedregistry.base.BaseActivity;
 
 public class Faq extends BaseActivity implements View.OnClickListener {
 
+
     public static void startAction(Context context) {
         Intent intent = new Intent(context, Faq.class);
         context.startActivity(intent);
