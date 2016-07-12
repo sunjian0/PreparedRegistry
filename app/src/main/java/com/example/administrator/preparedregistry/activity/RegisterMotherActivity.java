@@ -5,7 +5,9 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,6 +42,7 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
 
     private TextView tvTaskbarThree, tvTaskbarMother; // 上方显示页面的进度的textview
     private TextView tvPageHead, tvName, tvIdCard; // 输入框左边的文字内容
+    private Bundle parentsBundle;
 
     @Override
     protected int initLayout() {
@@ -69,10 +72,16 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
         btnEnd = bindView(R.id.registerparents_btn);
         tvTaskbarThree = bindView(R.id.registerparents_tv_taskbarThree);
         tvTaskbarMother = bindView(R.id.registerparents_tv_taskbarMother);
+
+
     }
 
     @Override
     protected void initData() {
+        parentsBundle=this.getIntent().getBundleExtra("father");
+        String name=parentsBundle.getString("name");
+        Log.i("sss",name+"");
+
         btnBack.setOnClickListener(this);
         btnEnd.setOnClickListener(this);
         tvTaskbarThree.setBackgroundResource(R.drawable.registerchecked_shape);

@@ -30,7 +30,7 @@ import com.example.administrator.preparedregistry.city.CityPicker;
  */
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
-    private Spinner spiIfHaveHome;
+    private Spinner spiIfHaveHome, spiNational;
     private RelativeLayout layoutHomeCard, layoutHomePlace;
     private Button buttonToFather;
     private ImageView ivBack;
@@ -40,10 +40,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             etLiveAddress, etHomeID, etHomeAddress;
     private String name, idCard, policeStation, phoneNumber,
             liveAddress, homeID, homeAddress, city;
+    private String national="汉族";
 
     private CityPicker cityPicker; //城市选择器
-    private String[] ifhavehome;
-    private int pos=0;
+    private String[] ifhavehome, nationals;
+    private int pos = 0;   // 是否有房产
 
     @Override
     protected int initLayout() {
@@ -53,6 +54,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void initView() {
         spiIfHaveHome = bindView(R.id.register_spinner_ifhavehome);
+        spiNational=bindView(R.id.register_spinner_national);
         layoutHomeCard = bindView(R.id.register_layoutHomeCardNumber);
         layoutHomePlace = bindView(R.id.register_layoutHomePlace);
         buttonToFather = bindView(R.id.register_btn);
@@ -67,12 +69,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         etLiveAddress = bindView(R.id.register_et_liveAddress);
         etHomeID = bindView(R.id.register_et_homeID);
         etHomeAddress = bindView(R.id.register_et_homeAddress);
+
     }
 
     @Override
     protected void initData() {
 
         ifhavehome = getResources().getStringArray(R.array.ifhavehome);
+        nationals = getResources().getStringArray(R.array.national);
 
         showDialog();
 
@@ -83,17 +87,28 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                 //切换为有时
                 if (ifhavehome[position].equals("有")) {
-                    pos=1;
+                    pos = 1;
                     layoutHomeCard.setVisibility(View.VISIBLE);
                     layoutHomePlace.setVisibility(View.VISIBLE);
                 }
                 if (ifhavehome[position].equals("无")) {
-                    pos=0;
+                    pos = 0;
                     layoutHomeCard.setVisibility(View.GONE);
                     layoutHomePlace.setVisibility(View.GONE);
                     etHomeID.setText("");
                     etHomeAddress.setText("");
                 }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        spiNational.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                national=nationals[position];
+                Log.i("sss",national);
             }
 
             @Override
@@ -169,7 +184,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 homeAddress = etHomeAddress.getText().toString().replace(" ", "");
 
 
-                if ((etName == null) || ("".equals(etName.getText().toString().trim()))
+                if ((etName.getText() == null) || ("".equals(etName.getText().toString().trim()))
                         || (etIdCard.getText() == null) || ("".equals(etIdCard.getText().toString().trim()))
                         || (etPoliceStation.getText() == null) || ("".equals(etPoliceStation.getText().toString().trim()))
                         || (etPhoneNumber.getText() == null) || ("".equals(etPhoneNumber.getText().toString().trim()))
@@ -185,12 +200,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     bundle.putString("phoneNumber", phoneNumber);
                     bundle.putString("liveAddress", liveAddress);
                     bundle.putString("city", city);
-                    if (pos==0){
+                    bundle.putString("national",national);
+
+                    if (pos == 0) {
                         Intent intent = new Intent(RegisterActivity.this, RegisterFatherActivity.class);
                         intent.putExtra("student", bundle);
                         startActivity(intent);
 
-                    }else {
+                    } else {
                         if ((etHomeID == null) || ("".equals(etHomeID.getText().toString().trim()))) {
                             Toast.makeText(RegisterActivity.this, "请填写完整的房产信息", Toast.LENGTH_SHORT).show();
                         } else {

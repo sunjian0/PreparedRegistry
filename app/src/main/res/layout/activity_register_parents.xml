@@ -189,13 +189,14 @@
                             android:textSize="13sp" />
 
                         <ToggleButton
-
                             android:id="@+id/registerparents_togglebutton"
                             style="@style/MyToggleButton"
                             android:layout_width="50dp"
-                            android:layout_height="30dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="12dp"
+                            android:layout_marginTop="5dp"
                             android:background="#00000000"
                             android:textOff=""
                             android:textOn="" />
@@ -229,6 +230,7 @@
                                 android:textSize="13sp" />
 
                             <EditText
+                                android:id="@+id/registerparents_et_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -259,6 +261,7 @@
                                 android:textSize="13sp" />
 
                             <EditText
+                                android:id="@+id/registerparents_et_idCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -288,6 +291,7 @@
                                 android:textSize="13sp" />
 
                             <EditText
+                                android:id="@+id/registerparents_et_phoneNumber"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -418,6 +422,7 @@
                                 android:textSize="13sp" />
 
                             <EditText
+                                android:id="@+id/registerparents_et_company"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -447,6 +452,7 @@
                                 android:textSize="13sp" />
 
                             <EditText
+                                android:id="@+id/registerparents_et_liveCard"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
@@ -563,6 +569,7 @@
                             android:textSize="13sp" />
 
                         <EditText
+                            android:id="@+id/registerparents_et_liveCardAddress"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:background="@null"
@@ -589,6 +596,7 @@
                             android:layout_height="40dp">
 
                             <EditText
+                                android:id="@+id/registerparents_et_businessCard"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_alignParentLeft="true"
@@ -669,6 +677,7 @@
                             android:layout_height="40dp">
 
                             <EditText
+                                android:id="@+id/registerparents_et_note"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_alignParentLeft="true"

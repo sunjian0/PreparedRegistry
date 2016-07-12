@@ -229,7 +229,7 @@
         <item>大江东集聚区前进派出所</item>
     </string-array>
     <string-array name="ifPayInsurance">
-        <item>无</item>
+        <item>请选择</item>
         <item>有</item>
     </string-array>
 </resources>

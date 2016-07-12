@@ -9,7 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.administrator.preparedregistry.R;
-import com.example.administrator.preparedregistry.tool.SystemBarTintManager;
+
 
 /**
  * Created by sunjian on 16/6/16.
