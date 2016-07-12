@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.administrator.preparedregistry.R;
@@ -35,7 +36,7 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
     private LinearLayout layoutNotDie, layoutDie, layoutInsuranceTime;
 
     private TextView tvLabelOne, tvLabelTwo, tvLabelThree;// 最下面按钮上方的提示
-    private Spinner spiInsurance;
+    private Spinner spiInsurance, spiPoliceStation;
     private EditText etInsuranceTimeStart, etInsuranceTimeEnd, etLiveStart, etLiveEnd, etBusinessStart, etBusinessEnd;
     private Button btnEnd;
     private String motherInsurance;
@@ -44,6 +45,11 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
     private TextView tvPageHead, tvName, tvIdCard; // 输入框左边的文字内容
     private Bundle parentsBundle;
 
+    private EditText etMotherName, etMotherIdCard, etMotherPhoneNumber, etMotherCompany,
+            etMotherLiveCard, etMotherLiveCardAddress, etMotherBusinessCard, etMotherNote;
+    private String motherLiveCardpoliceStation = "请选择";
+    private int motherIfDie = 0;  // 是否已故  这里0为未故 1为已故
+
     @Override
     protected int initLayout() {
         return R.layout.activity_register_parents;
@@ -51,9 +57,9 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
 
     @Override
     protected void initView() {
-        tvPageHead=bindView(R.id.registerparents_test_pageHead);
-        tvName=bindView(R.id.registerparents_tv_name);
-        tvIdCard=bindView(R.id.registerparents_tv_idCard);
+        tvPageHead = bindView(R.id.registerparents_test_pageHead);
+        tvName = bindView(R.id.registerparents_tv_name);
+        tvIdCard = bindView(R.id.registerparents_tv_idCard);
         btnBack = bindView(R.id.registerparents_back);
         toggleButton = bindView(R.id.registerparents_togglebutton);
         layoutNotDie = bindView(R.id.registerparents_layout_notdie);
@@ -63,6 +69,7 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
         tvLabelThree = bindView(R.id.registerparents_text_labelThree);
         layoutInsuranceTime = bindView(R.id.registerparents_layout_insuranceTime);
         spiInsurance = bindView(R.id.registerparents_spinner_insurance);
+        spiPoliceStation = bindView(R.id.registerparents_spinner_policeStation);
         etInsuranceTimeStart = bindView(R.id.registerparents_et_insuranceTimeStart);
         etInsuranceTimeEnd = bindView(R.id.registerparents_et_insuranceTimeEnd);
         etLiveStart = bindView(R.id.registerparents_et_liveStart);
@@ -73,14 +80,22 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
         tvTaskbarThree = bindView(R.id.registerparents_tv_taskbarThree);
         tvTaskbarMother = bindView(R.id.registerparents_tv_taskbarMother);
 
+        etMotherName = bindView(R.id.registerparents_et_name);
+        etMotherIdCard = bindView(R.id.registerparents_et_idCard);
+        etMotherPhoneNumber = bindView(R.id.registerparents_et_phoneNumber);
+        etMotherCompany = bindView(R.id.registerparents_et_company);
+        etMotherLiveCard = bindView(R.id.registerparents_et_liveCard);
+        etMotherLiveCardAddress = bindView(R.id.registerparents_et_liveCardAddress);
+        etMotherBusinessCard = bindView(R.id.registerparents_et_businessCard);
+        etMotherNote = bindView(R.id.registerparents_et_note);
 
     }
 
     @Override
     protected void initData() {
-        parentsBundle=this.getIntent().getBundleExtra("father");
-        String name=parentsBundle.getString("name");
-        Log.i("sss",name+"");
+        parentsBundle = this.getIntent().getBundleExtra("father");
+        String name = parentsBundle.getString("name");
+        Log.i("sss", name + "");
 
         btnBack.setOnClickListener(this);
         btnEnd.setOnClickListener(this);
@@ -90,6 +105,7 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
         tvName.setText("母亲姓名");
         tvIdCard.setText("母亲身份证号");
 
+        // TODO 切换后删除信息
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -99,12 +115,14 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
                     tvLabelOne.setTextColor(Color.parseColor("#b2b2b2"));
                     tvLabelTwo.setTextColor(Color.parseColor("#b2b2b2"));
                     tvLabelThree.setTextColor(Color.parseColor("#b2b2b2"));
+                    motherIfDie = 1;
                 } else {
                     layoutNotDie.setVisibility(View.VISIBLE);
                     layoutDie.setVisibility(View.GONE);
                     tvLabelOne.setTextColor(Color.parseColor("#d10000"));
                     tvLabelTwo.setTextColor(Color.parseColor("#d10000"));
                     tvLabelThree.setTextColor(Color.parseColor("#d10000"));
+                    motherIfDie = 0;
                 }
             }
         });
@@ -114,9 +132,9 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // TODO  改为保险的 array
                 String[] insurance = getResources().getStringArray(R.array.ifPayInsurance);
-                if (insurance[position].equals("无")) {
+                if (insurance[position].equals("请选择")) {
                     layoutInsuranceTime.setVisibility(View.GONE);
-                    motherInsurance = "";
+                    motherInsurance = "请选择";
                 } else {
                     layoutInsuranceTime.setVisibility(View.VISIBLE);
                     motherInsurance = insurance[position];
@@ -129,6 +147,18 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
             }
         });
 
+        spiPoliceStation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String[] policeStations = getResources().getStringArray(R.array.policeStation);
+                motherLiveCardpoliceStation = policeStations[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         etInsuranceTimeStart.setOnTouchListener(this);
         etInsuranceTimeEnd.setOnTouchListener(this);
         etLiveStart.setOnTouchListener(this);
@@ -145,8 +175,42 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
                 finish();
                 break;
             case R.id.registerparents_btn:
-                // TODO 提交
+                // 提交
+                String fatherInsurance = parentsBundle.getString("fatherInsurance");
+                if (fatherInsurance.equals("请选择") && motherInsurance.equals("请选择")) {
+                    Toast.makeText(RegisterMotherActivity.this, "父母一方必须在杭州已缴纳保险", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (motherIfDie == 1) {
+                        setData();
+                    } else {
+                        if ((etMotherName.getText() == null) || ("".equals(etMotherName.getText().toString().trim()))
+                                || (etMotherIdCard.getText() == null) || ("".equals(etMotherIdCard.getText().toString().trim()))
+                                || (etMotherPhoneNumber.getText() == null) || ("".equals(etMotherPhoneNumber.getText().toString().trim()))
+                                || (etMotherLiveCard.getText() == null) || ("".equals(etMotherLiveCard.getText().toString().trim()))
+                                || (etLiveStart.getText() == null) || ("".equals(etLiveStart.getText().toString().trim()))
+                                || (etLiveEnd.getText() == null) || ("".equals(etLiveEnd.getText().toString().trim()))
+                                || (etMotherLiveCardAddress.getText() == null) || ("".equals(etMotherLiveCardAddress.getText().toString().trim()))) {
+                            Toast.makeText(RegisterMotherActivity.this, "请填写完整的信息", Toast.LENGTH_SHORT).show();
+                        } else if (motherLiveCardpoliceStation.equals("请选择")) {
+                            Toast.makeText(RegisterMotherActivity.this, "请选择发证派出所", Toast.LENGTH_SHORT).show();
+                        }else {
+                            if (fatherInsurance.equals("请选择")) {
+                                // TODO 加一条“无”判断
+                                setData();
+                                break;
+                            } else {
+                                if ((etInsuranceTimeStart.getText() == null) || ("".equals(etInsuranceTimeStart.getText().toString().trim()))
+                                        || (etInsuranceTimeEnd.getText() == null) || ("".equals(etInsuranceTimeEnd.getText().toString().trim()))) {
+                                    Toast.makeText(RegisterMotherActivity.this, "请输入保险时间", Toast.LENGTH_SHORT).show();
+                                } else {
+                                   setData();
+                                    break;
+                                }
+                            }
+                        }
+                    }
 
+                }
                 break;
         }
     }
@@ -296,5 +360,17 @@ public class RegisterMotherActivity extends BaseActivity implements View.OnClick
         }
 
         return true;
+    }
+
+
+    // 上传数据
+    public void setData() {
+
+
+    }
+
+    // 拉取数据
+    public void getData() {
+
     }
 }

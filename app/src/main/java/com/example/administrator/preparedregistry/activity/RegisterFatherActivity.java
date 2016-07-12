@@ -48,11 +48,7 @@ public class RegisterFatherActivity extends BaseActivity implements View.OnClick
     private String fatherInsurance;
     private Bundle parentsBundle;
     private int fatherIfDie = 0;  // 是否已故  这里0为未故 1为已故
-    private String fatherName, fatherIdCard, fatherPhoneNumber,
-            fatherCompany, fatherLiveCard,
-            fatherLiveCardpoliceStation = "请选择", fatherLiveStart, fatherLiveEnd,
-            fatherLiveCardAddress, fatherBusinessCard,
-            fatherBusinessStart, fatherBusinessEnd, fatherNote;
+    private String fatherLiveCardpoliceStation = "请选择";
 
 
     @Override
@@ -93,13 +89,12 @@ public class RegisterFatherActivity extends BaseActivity implements View.OnClick
     @Override
     protected void initData() {
         parentsBundle = this.getIntent().getBundleExtra("student");
-//        String name = parentsBundle.getString("name");
-//        String id = parentsBundle.getString("idCard");
-//        String policeStation = parentsBundle.getString("policeStation");
-//        Log.i("sss",name+" "+id+" "+policeStation+"");
+
 
         btnBack.setOnClickListener(this);
         btnToMother.setOnClickListener(this);
+
+        // TODO 切换后删除信息
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -185,7 +180,6 @@ public class RegisterFatherActivity extends BaseActivity implements View.OnClick
                     if ((etFatherName.getText() == null) || ("".equals(etFatherName.getText().toString().trim()))
                             || (etFatherIdCard.getText() == null) || ("".equals(etFatherIdCard.getText().toString().trim()))
                             || (etFatherPhoneNumber.getText() == null) || ("".equals(etFatherPhoneNumber.getText().toString().trim()))
-                            || (etFatherCompany.getText() == null) || ("".equals(etFatherCompany.getText().toString().trim()))
                             || (etFatherLiveCard.getText() == null) || ("".equals(etFatherLiveCard.getText().toString().trim()))
                             || (etLiveStart.getText() == null) || ("".equals(etLiveStart.getText().toString().trim()))
                             || (etLiveEnd.getText() == null) || ("".equals(etLiveEnd.getText().toString().trim()))
