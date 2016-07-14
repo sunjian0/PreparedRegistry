@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * 
  * 滑动选择
  * 
- * @author zd
+ *   TODO 进入屏幕时效果
  * 
  */
 public class ScrollerNumberPicker extends View {

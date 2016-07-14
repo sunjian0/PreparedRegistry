@@ -10,7 +10,8 @@ import com.example.administrator.preparedregistry.R;
 import com.example.administrator.preparedregistry.base.BaseActivity;
 
 /**
- * Created by Administrator on 2016/6/16.
+ * Created by 孙健 on 2016/6/16.
+ * 公告
  */
 public class NoticeActivity extends BaseActivity {
 

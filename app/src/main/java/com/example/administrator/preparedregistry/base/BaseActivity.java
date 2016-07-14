@@ -1,9 +1,15 @@
 package com.example.administrator.preparedregistry.base;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+
+import com.example.administrator.preparedregistry.R;
+
 
 /**
  * Created by sunjian on 16/6/16.
@@ -13,6 +19,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(initLayout());
         initView();
         initData();
@@ -32,6 +40,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected <T extends View> T bindView(int id) {
         return (T) findViewById(id);
     }
+
 
 }
 

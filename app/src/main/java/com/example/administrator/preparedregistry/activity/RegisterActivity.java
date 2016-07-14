@@ -12,11 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.preparedregistry.R;
+
 import com.example.administrator.preparedregistry.base.BaseActivity;
+import com.example.administrator.preparedregistry.base.BaseApplication;
 import com.example.administrator.preparedregistry.city.CityPicker;
-import com.example.administrator.preparedregistry.dialog.CommitmentDialog;
+
 
 
 /**
@@ -54,9 +57,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initData() {
-
-        showCommitmentDialog();
-        //showDialog();
+        showDialog();
 
         // 是否有房产
         spiIfHaveHome.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -85,33 +86,31 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         layoutCity.setOnClickListener(this);
     }
 
-    private void showCommitmentDialog() {
-        CommitmentDialog.Builder builder = new CommitmentDialog.Builder(this);
+    public void showDialog() {
 
-        builder.setMessage("\u3000\u3000" + "为申请本人子女在接受义务教育，我承诺以下填写的信息合法、真实、有效，" +
-                "并同意教育行政部门对我提交的信息及材料与相关部门进行核实。");
-        builder.setTitle("承诺");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+                finish();
+            }
+        });
+        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
             }
         });
 
-        builder.setNegativeButton("不同意",
-                new android.content.DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        finish();
 
-                    }
-                });
+        View view = getLayoutInflater().inflate(R.layout.dialog_register, null);
 
+        builder.setView(view);
+        builder.setCancelable(false);
+        builder.show();
 
-        builder.create().show();
 
     }
-
 
     public void cityDialog(){
         AlertDialog.Builder cityBuilder = new AlertDialog.Builder(this);
