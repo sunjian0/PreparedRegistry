@@ -24,8 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="预登记"
             android:layout_marginTop="5dp"
+            android:text="预登记"
             android:textColor="#000000"
             android:textSize="24sp" />
 
@@ -48,10 +48,10 @@
             <!--公告-->
             <LinearLayout
                 android:id="@+id/main_notice"
-                android:background="#ffffff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <ImageView
@@ -74,11 +74,11 @@
             <!--预登记-->
             <LinearLayout
                 android:id="@+id/main_register"
-                android:background="#ffffff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:layout_weight="1"
+                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <ImageView
@@ -101,11 +101,11 @@
             <!--信息修改-->
             <LinearLayout
                 android:id="@+id/main_change"
-                android:background="#ffffff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="2dp"
                 android:layout_weight="1"
+                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <ImageView
@@ -135,10 +135,10 @@
             <!--结果核查-->
             <LinearLayout
                 android:id="@+id/main_checkResult"
-                android:background="#ffffff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <ImageView
@@ -161,11 +161,11 @@
             <!--复核申请-->
             <LinearLayout
                 android:id="@+id/main_applyForCheck"
-                android:background="#ffffff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:layout_weight="1"
+                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <ImageView
@@ -188,11 +188,11 @@
             <!--学院信息-->
             <LinearLayout
                 android:id="@+id/main_school"
-                android:layout_marginLeft="2dp"
-                android:background="#ffffff"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
                 android:layout_weight="1"
+                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <ImageView
@@ -213,5 +213,20 @@
 
             </LinearLayout>
         </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_nav_question"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/nav_icon_wenti" />
     </RelativeLayout>
 </LinearLayout>

@@ -32,7 +32,8 @@
         <activity android:name=".activity.RecheckRequest" />
         <activity android:name=".activity.SchoolInfor" />
         <activity android:name=".activity.Faq" />
-        <activity android:name=".activity.ResultCheckInfor"></activity>
+        <activity android:name=".activity.ResultCheckInfor" />
+        <activity android:name=".activity.GetRegisterCode"></activity>
     </application>
 
 </manifest>

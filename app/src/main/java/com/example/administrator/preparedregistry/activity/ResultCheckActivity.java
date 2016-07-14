@@ -66,7 +66,7 @@ public class ResultCheckActivity extends BaseActivity implements View.OnClickLis
                 }
                 break;
             case R.id.check_loging_forget_pwd:
-
+                GetRegisterCode.startAction(ResultCheckActivity.this);
                 break;
 
         }

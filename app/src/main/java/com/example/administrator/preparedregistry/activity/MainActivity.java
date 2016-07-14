@@ -18,6 +18,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private static String mRegisterBeginTime = "2016-1-1";
     private static String mRegisterEndTime = "2016-2-2";
     private ImageView imageView;
+    private ImageView mImgNavQuestion;
     private LinearLayout notice, register, change, checkResult, applyForCheck, school;
 
     @Override
@@ -36,7 +37,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //        window.setStatusBarColor(R.color.head_color);
 
         imageView = bindView(R.id.main_image);
-
+        mImgNavQuestion = bindView(R.id.img_nav_question);
         notice = bindView(R.id.main_notice);
         register = bindView(R.id.main_register);
         change = bindView(R.id.main_change);
@@ -51,7 +52,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.icon_xiugai_100x100px);
         MyDrawable drawable = new MyDrawable(bitmap);
         imageView.setImageDrawable(drawable);
-
+        mImgNavQuestion.setOnClickListener(this);
         notice.setOnClickListener(this);
         register.setOnClickListener(this);
         change.setOnClickListener(this);
@@ -91,12 +92,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 SchoolInfor.startAction(MainActivity.this);
                 break;
             //faq
-            /*
-             case R.id.action_settings:
+            case R.id.img_nav_question:
                 Faq.startAction(MainActivity.this);
                 break;
-            * */
-
         }
     }
 

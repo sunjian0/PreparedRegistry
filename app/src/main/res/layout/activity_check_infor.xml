@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical">
     <!--返回拦-->
     <RelativeLayout
@@ -246,7 +247,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:background="@color/colorSliverWhite"></LinearLayout>
+                    android:background="#f0f0f0"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -263,7 +264,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@color/colorSliverWhite"></LinearLayout>
+                    android:background="#f0f0f0"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -592,7 +593,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:background="@color/colorSliverWhite"></LinearLayout>
+                    android:background="#f0f0f0"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -609,7 +610,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@color/colorSliverWhite"></LinearLayout>
+                    android:background="#f0f0f0"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -943,6 +944,7 @@
                     android:textColor="@color/colorRed" />
 
                 <TextView
+                    android:id="@+id/tv_check_infor_reck_request"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -952,6 +954,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_check_infor_submmit"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="100dp"
