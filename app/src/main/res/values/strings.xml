@@ -1,4 +1,29 @@
 <resources>
     <string name="app_name">PreparedRegistry</string>
     <string name="action_settings">Settings</string>
+
+
+    <string name="tips">提示</string>
+    <string name="between">至</string>
+
+    <!-- 常用字符串 -->
+    <string name="aggre">同意</string>
+    <string name="disaggre">不同意"</string>
+    <string name="confirm">确定</string>
+    <string name="submit">提交</string>
+
+    <!-- 承诺书对话框-->
+    <string name="commitment_tilte">承诺书</string>
+    <string name="commitment_content">为申请本人子女</string>
+
+    <!-- 登记码对话框 -->
+    <string name="register_code">登记码</string>
+    <string name="your_register_code">您的登记码是</string>
+
+    <!--常见问题帮助-->
+    <string name="question1">1、如何修改已经填写好的信息？</string>
+    <string name="answer1">答：在报名预登记时间范围内，进入首页，点击“信息修改”按钮，
+        辅入子女身份证号以及登记码，点击确定后即可进行修改。</string>
+
+
 </resources>

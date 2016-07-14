@@ -4,12 +4,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -24,27 +21,23 @@ import com.example.administrator.preparedregistry.base.BaseApplication;
 import com.example.administrator.preparedregistry.city.CityPicker;
 
 
+
 /**
- * Created by 孙健 on 2016/6/17.
- * 基本信息页
+ * Created by Administrator on 2016/6/17.
  */
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
-    private Spinner spiIfHaveHome, spiNational;
+    private Spinner spiIfHaveHome;
     private RelativeLayout layoutHomeCard, layoutHomePlace;
-    private Button buttonToFather;
+    private Button button;
     private ImageView ivBack;
     private TextView tvCity;
     private LinearLayout layoutCity;
-    private EditText etName, etIdCard, etPoliceStation, etPhoneNumber,
-            etLiveAddress, etHomeID, etHomeAddress;
-    private String name, idCard, policeStation, phoneNumber,
-            liveAddress, homeID, homeAddress, city;
-    private String national="汉族";
 
-    private CityPicker cityPicker; //城市选择器
-    private String[] ifhavehome, nationals;
-    private int pos = 0;   // 是否有房产
+    private Button btnCity;
+    private CityPicker cityPicker;
+
+
 
     @Override
     protected int initLayout() {
@@ -54,61 +47,32 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void initView() {
         spiIfHaveHome = bindView(R.id.register_spinner_ifhavehome);
-        spiNational=bindView(R.id.register_spinner_national);
         layoutHomeCard = bindView(R.id.register_layoutHomeCardNumber);
         layoutHomePlace = bindView(R.id.register_layoutHomePlace);
-        buttonToFather = bindView(R.id.register_btn);
-        ivBack = bindView(R.id.register_back);
-        layoutCity = bindView(R.id.register_layout_city);
-        tvCity = bindView(R.id.register_text_city);
-
-        etName = bindView(R.id.register_et_name);
-        etIdCard = bindView(R.id.register_et_idCard);
-        etPoliceStation = bindView(R.id.register_et_policeStation);
-        etPhoneNumber = bindView(R.id.register_et_phoneNumber);
-        etLiveAddress = bindView(R.id.register_et_liveAddress);
-        etHomeID = bindView(R.id.register_et_homeID);
-        etHomeAddress = bindView(R.id.register_et_homeAddress);
-
+        button=bindView(R.id.register_btn);
+        ivBack=bindView(R.id.register_back);
+        layoutCity=bindView(R.id.register_layout_city);
+        tvCity=bindView(R.id.register_text_city);
     }
 
     @Override
     protected void initData() {
-
-        ifhavehome = getResources().getStringArray(R.array.ifhavehome);
-        nationals = getResources().getStringArray(R.array.national);
-
         showDialog();
 
         // 是否有房产
         spiIfHaveHome.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String[] ifhavehome = getResources().getStringArray(R.array.ifhavehome);
                 //切换为有时
                 if (ifhavehome[position].equals("有")) {
-                    pos = 1;
                     layoutHomeCard.setVisibility(View.VISIBLE);
                     layoutHomePlace.setVisibility(View.VISIBLE);
                 }
-                if (ifhavehome[position].equals("无")) {
-                    pos = 0;
+                if (ifhavehome[position].equals("无")){
                     layoutHomeCard.setVisibility(View.GONE);
                     layoutHomePlace.setVisibility(View.GONE);
-                    etHomeID.setText("");
-                    etHomeAddress.setText("");
                 }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-        spiNational.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                national=nationals[position];
-                Log.i("sss",national);
             }
 
             @Override
@@ -118,7 +82,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         });
 
         ivBack.setOnClickListener(this);
-        buttonToFather.setOnClickListener(this);
+        button.setOnClickListener(this);
         layoutCity.setOnClickListener(this);
     }
 
@@ -148,7 +112,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     }
 
-    public void cityDialog() {
+    public void cityDialog(){
         AlertDialog.Builder cityBuilder = new AlertDialog.Builder(this);
         View cityView = getLayoutInflater().inflate(R.layout.dialog_city, null);
 
@@ -159,7 +123,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         cityBuilder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String cityString = cityPicker.getCity_string();
+                String cityString=cityPicker.getCity_string();
                 tvCity.setText(cityString);
                 tvCity.setTextColor(Color.parseColor("#323232"));
             }
@@ -172,60 +136,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId()){
             case R.id.register_btn:
-                name = etName.getText().toString().replace(" ", "");
-                idCard = etIdCard.getText().toString().replace(" ", "");
-                policeStation = etPoliceStation.getText().toString().replace(" ", "");
-                phoneNumber = etPhoneNumber.getText().toString().replace(" ", "");
-                liveAddress = etLiveAddress.getText().toString().replace(" ", "");
-                city = tvCity.getText().toString();
-                homeID = etHomeID.getText().toString().replace(" ", "");
-                homeAddress = etHomeAddress.getText().toString().replace(" ", "");
 
-
-                if ((etName.getText() == null) || ("".equals(etName.getText().toString().trim()))
-                        || (etIdCard.getText() == null) || ("".equals(etIdCard.getText().toString().trim()))
-                        || (etPoliceStation.getText() == null) || ("".equals(etPoliceStation.getText().toString().trim()))
-                        || (etPhoneNumber.getText() == null) || ("".equals(etPhoneNumber.getText().toString().trim()))
-                        || (etLiveAddress.getText() == null) || ("".equals(etLiveAddress.getText().toString().trim()))
-                        || (city.equals("省 市 区"))) {
-
-                    Toast.makeText(RegisterActivity.this, "请填写完整的信息", Toast.LENGTH_SHORT).show();
-                } else {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("name", name);
-                    bundle.putString("idCard", idCard);
-                    bundle.putString("policeStation", policeStation);
-                    bundle.putString("phoneNumber", phoneNumber);
-                    bundle.putString("liveAddress", liveAddress);
-                    bundle.putString("city", city);
-                    bundle.putString("national",national);
-
-                    if (pos == 0) {
-                        Intent intent = new Intent(RegisterActivity.this, RegisterFatherActivity.class);
-                        intent.putExtra("student", bundle);
-                        startActivity(intent);
-
-                    } else {
-                        if ((etHomeID == null) || ("".equals(etHomeID.getText().toString().trim()))) {
-                            Toast.makeText(RegisterActivity.this, "请填写完整的房产信息", Toast.LENGTH_SHORT).show();
-                        } else {
-                            if ((etHomeAddress == null) || ("".equals(etHomeAddress.getText().toString().trim()))) {
-                                Toast.makeText(RegisterActivity.this, "请填写完整的房产信息", Toast.LENGTH_SHORT).show();
-                            } else {
-                                bundle.putString("homeID", homeID);
-                                bundle.putString("homeAddress", homeAddress);
-
-                                Intent intent = new Intent(RegisterActivity.this, RegisterFatherActivity.class);
-                                intent.putExtra("student", bundle);
-                                startActivity(intent);
-                            }
-                        }
-                    }
-
-                }
-
+                // TODO  一系列发送数据到服务器的操作
+                Intent intent=new Intent(RegisterActivity.this,RegisterFatherActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.register_back:
